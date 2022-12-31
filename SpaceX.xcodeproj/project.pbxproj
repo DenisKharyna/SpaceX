@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		610163B729607EF5008C3606 /* LabGrotesque-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 610163B429607EF5008C3606 /* LabGrotesque-Bold.ttf */; };
+		610163B829607EF5008C3606 /* LabGrotesque-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 610163B529607EF5008C3606 /* LabGrotesque-Medium.ttf */; };
+		610163B929607EF5008C3606 /* LabGrotesque-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 610163B629607EF5008C3606 /* LabGrotesque-Regular.ttf */; };
 		61B9D35F295258B000E6D62E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B9D35E295258B000E6D62E /* AppDelegate.swift */; };
 		61B9D361295258B000E6D62E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B9D360295258B000E6D62E /* SceneDelegate.swift */; };
 		61B9D363295258B000E6D62E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B9D362295258B000E6D62E /* MainViewController.swift */; };
@@ -22,6 +25,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		610163B429607EF5008C3606 /* LabGrotesque-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "LabGrotesque-Bold.ttf"; path = "../../../../../Downloads/LabGrotesque-Bold.ttf"; sourceTree = "<group>"; };
+		610163B529607EF5008C3606 /* LabGrotesque-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "LabGrotesque-Medium.ttf"; path = "../../../../../Downloads/LabGrotesque-Medium.ttf"; sourceTree = "<group>"; };
+		610163B629607EF5008C3606 /* LabGrotesque-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "LabGrotesque-Regular.ttf"; path = "../../../../../Downloads/LabGrotesque-Regular.ttf"; sourceTree = "<group>"; };
 		61B9D35B295258B000E6D62E /* SpaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61B9D35E295258B000E6D62E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61B9D360295258B000E6D62E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,6 +55,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		610163B029607D90008C3606 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				610163B429607EF5008C3606 /* LabGrotesque-Bold.ttf */,
+				610163B529607EF5008C3606 /* LabGrotesque-Medium.ttf */,
+				610163B629607EF5008C3606 /* LabGrotesque-Regular.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
 		61B9D352295258B000E6D62E = {
 			isa = PBXGroup;
 			children = (
@@ -107,6 +123,7 @@
 		61B9D37529525C6A00E6D62E /* Other */ = {
 			isa = PBXGroup;
 			children = (
+				610163B029607D90008C3606 /* Fonts */,
 				61B9D35E295258B000E6D62E /* AppDelegate.swift */,
 				61B9D360295258B000E6D62E /* SceneDelegate.swift */,
 				61B9D367295258B100E6D62E /* Assets.xcassets */,
@@ -192,7 +209,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				61B9D36B295258B100E6D62E /* LaunchScreen.storyboard in Resources */,
+				610163B729607EF5008C3606 /* LabGrotesque-Bold.ttf in Resources */,
+				610163B929607EF5008C3606 /* LabGrotesque-Regular.ttf in Resources */,
 				61B9D368295258B100E6D62E /* Assets.xcassets in Resources */,
+				610163B829607EF5008C3606 /* LabGrotesque-Medium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

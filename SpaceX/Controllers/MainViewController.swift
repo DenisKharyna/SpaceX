@@ -7,23 +7,22 @@
 
 import UIKit
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, UICollectionViewDelegate {
     //MARK: - Main Properties
     private var collectionView = UICollectionView(frame: CGRect.zero, collectionViewLayout: UICollectionViewFlowLayout.init())
-    private let pageController = UIPageControl()
+    private let pageControl = UIPageControl()
     
     private let reuseIdentifier = "CollectionViewCell"
     var allRockets = [Rocket]() {
         didSet {
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
-                self.pageController.numberOfPages = self.allRockets.count
+                self.pageControl.numberOfPages = self.allRockets.count
             }
         }
     }
     
     //MARK: - Life Cycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         ApiManager.shared.getRockets { rockets in
@@ -31,6 +30,13 @@ class MainViewController: UIViewController {
         }
         configureUI()
         constrain()
+    }
+    
+    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+        let x = scrollView.contentOffset.x
+        let w = scrollView.bounds.size.width
+        let currentPage = Int(ceil(x/w))
+        pageControl.currentPage = currentPage
     }
     
     //MARK: - Selectors
@@ -44,6 +50,7 @@ class MainViewController: UIViewController {
         layout.minimumLineSpacing = 0
         collectionView = UICollectionView(frame: self.view.frame, collectionViewLayout: layout)
         collectionView.dataSource = self
+        collectionView.delegate = self
         collectionView.register(RocketCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         collectionView.isScrollEnabled = true
         
@@ -51,18 +58,17 @@ class MainViewController: UIViewController {
         collectionView.bounces = false
         collectionView.isPagingEnabled = true
         
-        pageController.backgroundColor = Style.Colors.pageControlBackground
-        pageController.currentPage = 0
-        pageController.pageIndicatorTintColor = UIColor(red: 142/255, green: 142/255, blue: 142/255, alpha: 1)
-        pageController.currentPageIndicatorTintColor = .white
-        
+        pageControl.backgroundColor = Style.Colors.pageControlBackground
+        pageControl.pageIndicatorTintColor = UIColor(red: 142/255, green: 142/255, blue: 143/255, alpha: 1)
+        pageControl.currentPageIndicatorTintColor = .white
+        pageControl.isUserInteractionEnabled = false
     }
     private func constrain() {
         view.addSubview(collectionView)
-        view.addSubview(pageController)
+        view.addSubview(pageControl)
         
         collectionView.translatesAutoresizingMaskIntoConstraints = false
-        pageController.translatesAutoresizingMaskIntoConstraints = false
+        pageControl.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: view.topAnchor),
@@ -70,10 +76,10 @@ class MainViewController: UIViewController {
             collectionView.widthAnchor.constraint(equalTo: view.widthAnchor),
             collectionView.heightAnchor.constraint(equalToConstant: view.frame.height - 72),
             
-            pageController.topAnchor.constraint(equalTo: collectionView.bottomAnchor),
-            pageController.widthAnchor.constraint(equalTo: view.widthAnchor),
-            pageController.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            pageController.heightAnchor.constraint(equalToConstant: 72)
+            pageControl.topAnchor.constraint(equalTo: collectionView.bottomAnchor),
+            pageControl.widthAnchor.constraint(equalTo: view.widthAnchor),
+            pageControl.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            pageControl.heightAnchor.constraint(equalToConstant: 72)
         ])
     }
 }

@@ -63,7 +63,7 @@ class RocketCollectionViewCell: UICollectionViewCell {
     
     //MARK: - Helpers
     private func configureUI() {
-        scrollView.contentSize = CGSize(width: self.contentView.frame.size.width, height: 1100)
+        scrollView.contentSize = CGSize(width: self.contentView.frame.size.width, height: 1050)
         scrollView.bounces = false
         scrollView.showsVerticalScrollIndicator = false
         scrollView.isScrollEnabled = true
@@ -72,7 +72,7 @@ class RocketCollectionViewCell: UICollectionViewCell {
         infoView.layer.cornerRadius = 32
 
         titleLabel.textColor = Style.Colors.mainTextColor
-        titleLabel.font = UIFont.boldSystemFont(ofSize: 24)
+        titleLabel.font = Style.Fonts.labGrotesqueMedium?.withSize(24)
         
         settingsButton.setImage(UIImage(named: "Settings")!, for: .normal)
         settingsButton.imageView?.contentMode = .scaleAspectFit
@@ -102,9 +102,9 @@ class RocketCollectionViewCell: UICollectionViewCell {
         secondStage = firstStage.configureViewWithText(firstFieldText: "Engines Amount", secondFieldText: "Fuel Amount", thirdFieldText: "Fuel Burn Time", firstLabel: numberOfEngines2, secondLabel: fuelAmount2, thirdLabel: burnTime2)
         
         showLaunchesButton.backgroundColor = Style.Colors.grayBackground
-        showLaunchesButton.titleLabel?.text = "Show Launches"
+        showLaunchesButton.setTitle("See Launches", for: .normal)
         showLaunchesButton.titleLabel?.textColor = Style.Colors.mainTextColor
-        showLaunchesButton.titleLabel?.font = UIFont.boldSystemFont(ofSize: 18)
+        showLaunchesButton.titleLabel?.font = Style.Fonts.labGrotesqueBold?.withSize(18)
         showLaunchesButton.layer.cornerRadius = 12
         showLaunchesButton.addTarget(self, action: #selector(showLaunchesButtonTapped), for: .touchUpInside)
     }

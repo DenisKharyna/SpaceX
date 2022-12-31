@@ -25,11 +25,11 @@ class RocketInfoViewCell: UICollectionViewCell {
     
     //MARK: - Helpers
     private func configureUI() {
-        numberLabel.font = UIFont.boldSystemFont(ofSize: 16)
-        numberLabel.textColor = Style.Colors.mainTextColor
+        numberLabel.font = Style.Fonts.labGrotesqueBold?.withSize(16)
+        numberLabel.textColor = .white
         
-        text.font = UIFont.systemFont(ofSize: 14)
-        text.textColor = Style.Colors.secondaryTextColor
+        text.font = Style.Fonts.labGrotesqueRegular?.withSize(14)
+        text.textColor = Style.Colors.rocketInfoCollectionViewTextColor
     }
     private func constrain() {
         contentView.addSubview(numberLabel)

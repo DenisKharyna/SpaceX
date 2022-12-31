@@ -50,7 +50,9 @@ extension UIView {
             firstHorizontalView.widthAnchor.constraint(equalTo: view.widthAnchor),
             firstHorizontalView.heightAnchor.constraint(equalToConstant: 24),
             
-            secondHorizontalView.widthAnchor.constraint(equalTo: view.widthAnchor)
+            secondHorizontalView.widthAnchor.constraint(equalTo: view.widthAnchor),
+            
+            thirdHorizontalView.widthAnchor.constraint(equalTo: view.widthAnchor)
         ])
         
         return view
