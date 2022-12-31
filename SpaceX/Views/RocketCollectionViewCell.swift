@@ -206,6 +206,24 @@ extension RocketCollectionViewCell: UICollectionViewDataSource {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseId, for: indexPath) as! RocketInfoViewCell
         cell.backgroundColor = Style.Colors.grayBackground
         cell.layer.cornerRadius = 32
+        guard let rocket = rocket else { return cell }
+        switch indexPath.row {
+        case 0:
+            cell.numberLabel.text = String(rocket.height.feet!)
+            cell.text.text = "Height, ft"
+        case 1:
+            cell.numberLabel.text = String(rocket.diameter.feet!)
+            cell.text.text = "Diameter, ft"
+        case 2:
+            cell.numberLabel.text = String(rocket.mass.lb)
+            cell.text.text = "Mass, lb"
+        case 3:
+            cell.numberLabel.text = String(rocket.payloadWeights[0].lb)
+            cell.text.text = "Payload, lb"
+        default:
+            cell.numberLabel.text = "Text"
+            cell.text.text = "text"
+        }
         return cell
     }
 }

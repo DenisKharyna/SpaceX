@@ -12,6 +12,7 @@ struct Rocket: Codable {
     let mass: Mass
     let firstStage: FirstStage
     let secondStage: SecondStage
+    let payloadWeights: [PayloadWeights]
     let flickrImages: [String]
     let name: String
     let firstFlight: String
@@ -22,15 +23,11 @@ struct Rocket: Codable {
         case height, diameter, mass, name, country
         case firstStage = "first_stage"
         case secondStage = "second_stage"
+        case payloadWeights = "payload_weights"
         case flickrImages = "flickr_images"
         case costPerLaunch = "cost_per_launch"
         case firstFlight = "first_flight"
     }
-}
-
-// MARK: - Diameter
-struct Diameter: Codable {
-    let meters, feet: Double?
 }
 
 // MARK: - FirstStage
@@ -46,11 +43,6 @@ struct FirstStage: Codable {
     }
 }
 
-// MARK: - Mass
-struct Mass: Codable {
-    let kg, lb: Int
-}
-
 // MARK: - SecondStage
 struct SecondStage: Codable {
     let engines: Int
@@ -62,4 +54,18 @@ struct SecondStage: Codable {
         case fuelAmountTons = "fuel_amount_tons"
         case burnTimeSEC = "burn_time_sec"
     }
+}
+
+struct PayloadWeights: Codable {
+    let kg, lb: Int
+}
+
+// MARK: - Diameter
+struct Diameter: Codable {
+    let meters, feet: Double?
+}
+
+// MARK: - Mass
+struct Mass: Codable {
+    let kg, lb: Int
 }
