@@ -29,7 +29,7 @@ class RocketInfoViewCell: UICollectionViewCell {
         numberLabel.textColor = .white
         
         text.font = Style.Fonts.labGrotesqueRegular?.withSize(14)
-        text.textColor = Style.Colors.rocketInfoCollectionViewTextColor
+        text.textColor = Style.Colors.rocketInfoTextColor
     }
     private func constrain() {
         contentView.addSubview(numberLabel)
