@@ -31,6 +31,10 @@ class MainViewController: UIViewController, UICollectionViewDelegate {
         configureUI()
         constrain()
     }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+            navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let x = scrollView.contentOffset.x
@@ -53,7 +57,6 @@ class MainViewController: UIViewController, UICollectionViewDelegate {
         collectionView.delegate = self
         collectionView.register(RocketCollectionViewCell.self, forCellWithReuseIdentifier: reuseIdentifier)
         collectionView.isScrollEnabled = true
-        
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.bounces = false
         collectionView.isPagingEnabled = true
@@ -71,10 +74,10 @@ class MainViewController: UIViewController, UICollectionViewDelegate {
         pageControl.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
-            collectionView.topAnchor.constraint(equalTo: view.topAnchor),
+            collectionView.topAnchor.constraint(equalTo: view.topAnchor, constant: -60),
             collectionView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
             collectionView.widthAnchor.constraint(equalTo: view.widthAnchor),
-            collectionView.heightAnchor.constraint(equalToConstant: view.frame.height - 72),
+            collectionView.heightAnchor.constraint(equalToConstant: view.frame.height - 12),
             
             pageControl.topAnchor.constraint(equalTo: collectionView.bottomAnchor),
             pageControl.widthAnchor.constraint(equalTo: view.widthAnchor),
@@ -84,6 +87,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate {
     }
 }
 
+//MARK: - UICollectionViewDataSource
 extension MainViewController: UICollectionViewDataSource {
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
@@ -104,6 +108,7 @@ extension MainViewController: UICollectionViewDataSource {
                 }
             }
         }
+        cell.delegate = self
         cell.titleLabel.text = rocket.name
         cell.firstLaunch.text = rocket.firstFlight
         cell.country.text = rocket.country
@@ -120,4 +125,20 @@ extension MainViewController: UICollectionViewDataSource {
         }
         return cell
     }
+}
+
+//MARK: - PushControllersDelegate
+extension MainViewController: PushControllersDelegate {
+    func pushLaunchesController(title: String) {
+        let vc = LaunchesViewController()
+        vc.title = title
+        navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    func presentSettingsController() {
+        //let vc = LaunchesViewController(nibName: "LaunchesViewController", bundle: nil)
+        //navigationController?.pushViewController(vc, animated: true)
+    }
+    
+    
 }

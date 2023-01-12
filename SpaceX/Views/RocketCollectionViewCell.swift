@@ -11,6 +11,7 @@ class RocketCollectionViewCell: UICollectionViewCell {
     
     var rocket: Rocket?
     private let reuseId = "CellID"
+    weak var delegate: PushControllersDelegate?
 
     //MARK: - Main Properties
     private let scrollView = UIScrollView()
@@ -49,6 +50,7 @@ class RocketCollectionViewCell: UICollectionViewCell {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+        //self.delegate?.presentSettingsController()
     }
     
     //MARK: - Selectors
@@ -57,7 +59,7 @@ class RocketCollectionViewCell: UICollectionViewCell {
     }
     
     @objc private func showLaunchesButtonTapped() {
-        print("showLaunchesButtonTapped")
+        self.delegate?.pushLaunchesController(title: rocket!.name)
     }
 
     
@@ -89,6 +91,7 @@ class RocketCollectionViewCell: UICollectionViewCell {
         collectionView.register(RocketInfoViewCell.self, forCellWithReuseIdentifier: reuseId)
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.bounces = true
+        collectionView.backgroundColor = .clear
         
         mainInfo = mainInfo.configureViewWithText(firstFieldText: "First Flight", secondFieldText: "Country", thirdFieldText: "Flight Price", firstLabel: firstLaunch, secondLabel: country, thirdLabel: price)
         firstLaunch.font = UIFont.systemFont(ofSize: 16)

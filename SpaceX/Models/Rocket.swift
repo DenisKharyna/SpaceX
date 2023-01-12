@@ -12,7 +12,7 @@ struct Rocket: Codable {
     let mass: Mass
     let firstStage: FirstStage
     let secondStage: SecondStage
-    let payloadWeights: [PayloadWeights]
+    let payloadWeights: [Mass]
     let flickrImages: [String]
     let name: String
     let firstFlight: String
@@ -54,10 +54,6 @@ struct SecondStage: Codable {
         case fuelAmountTons = "fuel_amount_tons"
         case burnTimeSEC = "burn_time_sec"
     }
-}
-
-struct PayloadWeights: Codable {
-    let kg, lb: Int
 }
 
 // MARK: - Diameter

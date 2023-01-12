@@ -10,6 +10,8 @@
 		610163B729607EF5008C3606 /* LabGrotesque-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 610163B429607EF5008C3606 /* LabGrotesque-Bold.ttf */; };
 		610163B829607EF5008C3606 /* LabGrotesque-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 610163B529607EF5008C3606 /* LabGrotesque-Medium.ttf */; };
 		610163B929607EF5008C3606 /* LabGrotesque-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 610163B629607EF5008C3606 /* LabGrotesque-Regular.ttf */; };
+		61066F8129686F5700A3D7D7 /* LaunchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61066F8029686F5700A3D7D7 /* LaunchesViewController.swift */; };
+		61066F8329687A1300A3D7D7 /* LaunchesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61066F8229687A1300A3D7D7 /* LaunchesTableViewCell.swift */; };
 		61B9D35F295258B000E6D62E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B9D35E295258B000E6D62E /* AppDelegate.swift */; };
 		61B9D361295258B000E6D62E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B9D360295258B000E6D62E /* SceneDelegate.swift */; };
 		61B9D363295258B000E6D62E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B9D362295258B000E6D62E /* MainViewController.swift */; };
@@ -17,6 +19,7 @@
 		61B9D36B295258B100E6D62E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 61B9D369295258B100E6D62E /* LaunchScreen.storyboard */; };
 		61BD47CE295B42FD008A23D8 /* UILableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BD47CD295B42FC008A23D8 /* UILableExtension.swift */; };
 		61BD47D0295B4640008A23D8 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BD47CF295B4640008A23D8 /* UIViewExtension.swift */; };
+		61C298492970671700B839C0 /* PushControllersProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C298482970671700B839C0 /* PushControllersProtocol.swift */; };
 		61E231C029534AF000B8DFE7 /* RocketCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E231BF29534AF000B8DFE7 /* RocketCollectionViewCell.swift */; };
 		61E231C42953B67100B8DFE7 /* RocketInfoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E231C32953B67100B8DFE7 /* RocketInfoViewCell.swift */; };
 		61E88E6A2952812000F459B9 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E88E692952812000F459B9 /* Style.swift */; };
@@ -28,6 +31,8 @@
 		610163B429607EF5008C3606 /* LabGrotesque-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "LabGrotesque-Bold.ttf"; path = "../../../../../Downloads/LabGrotesque-Bold.ttf"; sourceTree = "<group>"; };
 		610163B529607EF5008C3606 /* LabGrotesque-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "LabGrotesque-Medium.ttf"; path = "../../../../../Downloads/LabGrotesque-Medium.ttf"; sourceTree = "<group>"; };
 		610163B629607EF5008C3606 /* LabGrotesque-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "LabGrotesque-Regular.ttf"; path = "../../../../../Downloads/LabGrotesque-Regular.ttf"; sourceTree = "<group>"; };
+		61066F8029686F5700A3D7D7 /* LaunchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesViewController.swift; sourceTree = "<group>"; };
+		61066F8229687A1300A3D7D7 /* LaunchesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesTableViewCell.swift; sourceTree = "<group>"; };
 		61B9D35B295258B000E6D62E /* SpaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61B9D35E295258B000E6D62E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61B9D360295258B000E6D62E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +42,7 @@
 		61B9D36C295258B100E6D62E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		61BD47CD295B42FC008A23D8 /* UILableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILableExtension.swift; sourceTree = "<group>"; };
 		61BD47CF295B4640008A23D8 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
+		61C298482970671700B839C0 /* PushControllersProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushControllersProtocol.swift; sourceTree = "<group>"; };
 		61E231BF29534AF000B8DFE7 /* RocketCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketCollectionViewCell.swift; sourceTree = "<group>"; };
 		61E231C32953B67100B8DFE7 /* RocketInfoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketInfoViewCell.swift; sourceTree = "<group>"; };
 		61E88E692952812000F459B9 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
@@ -99,6 +105,7 @@
 			isa = PBXGroup;
 			children = (
 				61B9D362295258B000E6D62E /* MainViewController.swift */,
+				61066F8029686F5700A3D7D7 /* LaunchesViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -116,6 +123,7 @@
 			children = (
 				61E231BF29534AF000B8DFE7 /* RocketCollectionViewCell.swift */,
 				61E231C32953B67100B8DFE7 /* RocketInfoViewCell.swift */,
+				61066F8229687A1300A3D7D7 /* LaunchesTableViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -138,6 +146,7 @@
 				61E88E692952812000F459B9 /* Style.swift */,
 				61BD47CD295B42FC008A23D8 /* UILableExtension.swift */,
 				61BD47CF295B4640008A23D8 /* UIViewExtension.swift */,
+				61C298482970671700B839C0 /* PushControllersProtocol.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -227,9 +236,12 @@
 				61B9D363295258B000E6D62E /* MainViewController.swift in Sources */,
 				61B9D35F295258B000E6D62E /* AppDelegate.swift in Sources */,
 				61E231C42953B67100B8DFE7 /* RocketInfoViewCell.swift in Sources */,
+				61066F8129686F5700A3D7D7 /* LaunchesViewController.swift in Sources */,
+				61C298492970671700B839C0 /* PushControllersProtocol.swift in Sources */,
 				61E88E6D2952865800F459B9 /* ApiManager.swift in Sources */,
 				61E231C029534AF000B8DFE7 /* RocketCollectionViewCell.swift in Sources */,
 				61BD47CE295B42FD008A23D8 /* UILableExtension.swift in Sources */,
+				61066F8329687A1300A3D7D7 /* LaunchesTableViewCell.swift in Sources */,
 				61E88E6F2952871700F459B9 /* Rocket.swift in Sources */,
 				61B9D361295258B000E6D62E /* SceneDelegate.swift in Sources */,
 				61E88E6A2952812000F459B9 /* Style.swift in Sources */,
@@ -385,6 +397,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.deniskharyna.SpaceX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -412,6 +427,9 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.deniskharyna.SpaceX;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
