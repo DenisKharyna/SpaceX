@@ -65,7 +65,7 @@ class RocketCollectionViewCell: UICollectionViewCell {
     
     //MARK: - Helpers
     private func configureUI() {
-        scrollView.contentSize = CGSize(width: self.contentView.frame.size.width, height: 1050)
+        scrollView.contentSize = CGSize(width: self.contentView.frame.size.width, height: 1100)
         scrollView.bounces = false
         scrollView.showsVerticalScrollIndicator = false
         scrollView.isScrollEnabled = true
@@ -149,7 +149,7 @@ class RocketCollectionViewCell: UICollectionViewCell {
             imageView.topAnchor.constraint(equalTo: scrollContentView.topAnchor, constant: -60),
             imageView.centerXAnchor.constraint(equalTo: scrollContentView.centerXAnchor),
             imageView.widthAnchor.constraint(equalTo: scrollContentView.widthAnchor),
-            imageView.heightAnchor.constraint(equalToConstant: 300),
+            imageView.heightAnchor.constraint(equalToConstant: 350),
 
             infoView.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: -32),
             infoView.centerXAnchor.constraint(equalTo: scrollContentView.centerXAnchor),

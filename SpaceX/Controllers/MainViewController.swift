@@ -104,7 +104,7 @@ extension MainViewController: UICollectionViewDataSource {
             let data = try? Data(contentsOf: url!)
             DispatchQueue.main.async {
                 if let data = data {
-                    cell.imageView.image = UIImage(data: data)
+                    cell.imageView.image = UIImage(data: data)?.resizableImage(withCapInsets: .zero, resizingMode: .stretch)
                 }
             }
         }

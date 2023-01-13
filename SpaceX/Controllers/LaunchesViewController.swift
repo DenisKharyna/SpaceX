@@ -24,12 +24,14 @@ class LaunchesViewController: UITableViewController {
     //MARK: - Helpers
     private func configureUI() {
         navigationController?.isNavigationBarHidden = false
+        navigationController?.navigationBar.tintColor = .white
         
         tableView.register(LaunchesTableViewCell.self, forCellReuseIdentifier: cellId)
         tableView.backgroundColor = .black
         tableView.separatorColor = .clear
         tableView.bounces = false
         tableView.isUserInteractionEnabled = false
+        tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 40))
     }
     private func constrain() {
         
