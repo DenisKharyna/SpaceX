@@ -55,14 +55,13 @@ class RocketCollectionViewCell: UICollectionViewCell {
     
     //MARK: - Selectors
     @objc private func settingsTapped() {
-        print("settingsTapped")
+        self.delegate?.presentSettingsController()
     }
     
     @objc private func showLaunchesButtonTapped() {
         self.delegate?.pushLaunchesController(title: rocket!.name)
     }
 
-    
     //MARK: - Helpers
     private func configureUI() {
         scrollView.contentSize = CGSize(width: self.contentView.frame.size.width, height: 1100)

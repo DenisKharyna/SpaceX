@@ -21,12 +21,16 @@ class MainViewController: UIViewController, UICollectionViewDelegate {
             }
         }
     }
+    var allLaunches = [Launch]()
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         ApiManager.shared.getRockets { rockets in
             self.allRockets = rockets
+        }
+        ApiManager.shared.getLaunches { launches in
+            self.allLaunches = launches
         }
         configureUI()
         constrain()
@@ -42,8 +46,6 @@ class MainViewController: UIViewController, UICollectionViewDelegate {
         let currentPage = Int(ceil(x/w))
         pageControl.currentPage = currentPage
     }
-    
-    //MARK: - Selectors
     
     //MARK: - Helping
     private func configureUI() {
@@ -132,12 +134,13 @@ extension MainViewController: PushControllersDelegate {
     func pushLaunchesController(title: String) {
         let vc = LaunchesViewController()
         vc.title = title
+        vc.allLaunches = allLaunches
         navigationController?.pushViewController(vc, animated: true)
     }
     
     func presentSettingsController() {
-        //let vc = LaunchesViewController(nibName: "LaunchesViewController", bundle: nil)
-        //navigationController?.pushViewController(vc, animated: true)
+        let vc = SettingsViewController()
+        navigationController?.present(vc, animated: true)
     }
     
     

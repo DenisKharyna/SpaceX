@@ -20,6 +20,8 @@
 		61BD47CE295B42FD008A23D8 /* UILableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BD47CD295B42FC008A23D8 /* UILableExtension.swift */; };
 		61BD47D0295B4640008A23D8 /* UIViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61BD47CF295B4640008A23D8 /* UIViewExtension.swift */; };
 		61C298492970671700B839C0 /* PushControllersProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61C298482970671700B839C0 /* PushControllersProtocol.swift */; };
+		61E1DECC2971C7D800B0354A /* Launch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E1DECB2971C7D800B0354A /* Launch.swift */; };
+		61E1DECE2971E76C00B0354A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E1DECD2971E76C00B0354A /* SettingsViewController.swift */; };
 		61E231C029534AF000B8DFE7 /* RocketCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E231BF29534AF000B8DFE7 /* RocketCollectionViewCell.swift */; };
 		61E231C42953B67100B8DFE7 /* RocketInfoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E231C32953B67100B8DFE7 /* RocketInfoViewCell.swift */; };
 		61E88E6A2952812000F459B9 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61E88E692952812000F459B9 /* Style.swift */; };
@@ -43,6 +45,8 @@
 		61BD47CD295B42FC008A23D8 /* UILableExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILableExtension.swift; sourceTree = "<group>"; };
 		61BD47CF295B4640008A23D8 /* UIViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtension.swift; sourceTree = "<group>"; };
 		61C298482970671700B839C0 /* PushControllersProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PushControllersProtocol.swift; sourceTree = "<group>"; };
+		61E1DECB2971C7D800B0354A /* Launch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Launch.swift; sourceTree = "<group>"; };
+		61E1DECD2971E76C00B0354A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		61E231BF29534AF000B8DFE7 /* RocketCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketCollectionViewCell.swift; sourceTree = "<group>"; };
 		61E231C32953B67100B8DFE7 /* RocketInfoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RocketInfoViewCell.swift; sourceTree = "<group>"; };
 		61E88E692952812000F459B9 /* Style.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
@@ -106,6 +110,7 @@
 			children = (
 				61B9D362295258B000E6D62E /* MainViewController.swift */,
 				61066F8029686F5700A3D7D7 /* LaunchesViewController.swift */,
+				61E1DECD2971E76C00B0354A /* SettingsViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -114,6 +119,7 @@
 			isa = PBXGroup;
 			children = (
 				61E88E6E2952871700F459B9 /* Rocket.swift */,
+				61E1DECB2971C7D800B0354A /* Launch.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -236,9 +242,11 @@
 				61B9D363295258B000E6D62E /* MainViewController.swift in Sources */,
 				61B9D35F295258B000E6D62E /* AppDelegate.swift in Sources */,
 				61E231C42953B67100B8DFE7 /* RocketInfoViewCell.swift in Sources */,
+				61E1DECC2971C7D800B0354A /* Launch.swift in Sources */,
 				61066F8129686F5700A3D7D7 /* LaunchesViewController.swift in Sources */,
 				61C298492970671700B839C0 /* PushControllersProtocol.swift in Sources */,
 				61E88E6D2952865800F459B9 /* ApiManager.swift in Sources */,
+				61E1DECE2971E76C00B0354A /* SettingsViewController.swift in Sources */,
 				61E231C029534AF000B8DFE7 /* RocketCollectionViewCell.swift in Sources */,
 				61BD47CE295B42FD008A23D8 /* UILableExtension.swift in Sources */,
 				61066F8329687A1300A3D7D7 /* LaunchesTableViewCell.swift in Sources */,

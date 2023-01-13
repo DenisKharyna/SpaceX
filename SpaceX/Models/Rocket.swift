@@ -18,9 +18,10 @@ struct Rocket: Codable {
     let firstFlight: String
     let costPerLaunch: Int
     let country: String
+    let id: String
 
     enum CodingKeys: String, CodingKey {
-        case height, diameter, mass, name, country
+        case height, diameter, mass, name, country, id
         case firstStage = "first_stage"
         case secondStage = "second_stage"
         case payloadWeights = "payload_weights"

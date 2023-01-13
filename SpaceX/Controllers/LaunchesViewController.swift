@@ -8,15 +8,20 @@
 import UIKit
 
 class LaunchesViewController: UITableViewController {
+    
     let cellId = "cellId"
+    var allLaunches = [Launch]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.tableView.reloadData()
+            }
+        }
+    }
     //MARK: - Main Properties
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
-//        ApiManager.shared.getRockets { rockets in
-//            self.allRockets = rockets
-//        }
         configureUI()
         constrain()
     }
