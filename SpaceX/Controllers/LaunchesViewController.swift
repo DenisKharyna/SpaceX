@@ -8,7 +8,6 @@
 import UIKit
 
 class LaunchesViewController: UITableViewController {
-    
     let cellId = "cellId"
     var allLaunches = [Launch]() {
         didSet {
@@ -48,14 +47,24 @@ extension LaunchesViewController {
         return 1
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        return allLaunches.count > 5 ? 5 : allLaunches.count
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 116
     }
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! LaunchesTableViewCell
-        //cell.backgroundColor = .red
+        let launch = allLaunches[indexPath.row]
+        cell.launchName.text = launch.name
+        let date = Date(timeIntervalSince1970: TimeInterval(launch.dateUnix))
+        let formatter = DateFormatter()
+        formatter.dateFormat = "d MMMM, yyyy"
+        cell.launchDate.text = formatter.string(from: date)
+        if let success = launch.success {
+            cell.successIcon.image = success ? UIImage(named: "SuccessTrueIcon") : UIImage(named: "SuccessFalseIcon")
+        } else {
+            cell.successIcon.image = UIImage(named: "SuccessTrueIcon")
+        }
         return cell
     }
 }

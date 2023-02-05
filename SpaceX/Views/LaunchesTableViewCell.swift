@@ -10,9 +10,9 @@ import UIKit
 class LaunchesTableViewCell: UITableViewCell {
     //MARK: - Main Properties
     private let background = UIView()
-    private let launchName = UILabel()
-    private let launchDate = UILabel()
-    private let successIcon = UIImageView()
+    var launchName = UILabel()
+    var launchDate = UILabel()
+    var successIcon = UIImageView()
 
     //MARK: - Life Cycle
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -30,7 +30,6 @@ class LaunchesTableViewCell: UITableViewCell {
         background.backgroundColor = Style.Colors.grayBackground
         background.layer.cornerRadius = 24
         
-        launchName.text = "Some Text"
         launchName.font = Style.Fonts.labGrotesqueRegular?.withSize(20)
         launchName.textColor = .white
 
@@ -38,7 +37,6 @@ class LaunchesTableViewCell: UITableViewCell {
         launchDate.font = Style.Fonts.labGrotesqueRegular?.withSize(16)
         launchDate.textColor = Style.Colors.rocketInfoTextColor
         
-        successIcon.image = UIImage(named: "SuccessTrueIcon")
     }
     private func constrain() {
         let text = UIStackView(arrangedSubviews: [launchName, launchDate])

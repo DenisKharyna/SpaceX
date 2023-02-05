@@ -59,7 +59,7 @@ class RocketCollectionViewCell: UICollectionViewCell {
     }
     
     @objc private func showLaunchesButtonTapped() {
-        self.delegate?.pushLaunchesController(title: rocket!.name)
+        self.delegate?.pushLaunchesController(title: rocket!.name, id: rocket!.id)
     }
 
     //MARK: - Helpers

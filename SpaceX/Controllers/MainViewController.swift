@@ -131,10 +131,14 @@ extension MainViewController: UICollectionViewDataSource {
 
 //MARK: - PushControllersDelegate
 extension MainViewController: PushControllersDelegate {
-    func pushLaunchesController(title: String) {
+    func pushLaunchesController(title: String, id: String) {
         let vc = LaunchesViewController()
         vc.title = title
-        vc.allLaunches = allLaunches
+        for launch in allLaunches {
+            if launch.rocket == id {
+                vc.allLaunches.append(launch)
+            }
+        }
         navigationController?.pushViewController(vc, animated: true)
     }
     

@@ -8,6 +8,6 @@
 import Foundation
 
 protocol PushControllersDelegate: AnyObject {
-    func pushLaunchesController(title: String)
+    func pushLaunchesController(title: String, id: String)
     func presentSettingsController()
 }
