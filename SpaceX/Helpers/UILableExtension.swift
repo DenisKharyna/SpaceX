@@ -24,4 +24,10 @@ extension UILabel {
         font = Style.Fonts.labGrotesqueBold?.withSize(16)
         translatesAutoresizingMaskIntoConstraints = false
     }
+    func configureAttributedStr(with text: String, addition: NSAttributedString) {
+        let mutableString = NSMutableAttributedString()
+        mutableString.append(NSAttributedString(string: text))
+        mutableString.append(addition)
+        self.attributedText = mutableString
+    }
 }

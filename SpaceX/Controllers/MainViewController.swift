@@ -112,23 +112,29 @@ extension MainViewController: UICollectionViewDataSource {
         }
         cell.delegate = self
         cell.titleLabel.text = rocket.name
+        
         let prevFormatter = DateFormatter()
         prevFormatter.dateFormat = "yyyy-MM-dd"
         let formatter = DateFormatter()
         formatter.dateFormat = "d MMMM, yyyy"
         let date = prevFormatter.date(from: rocket.firstFlight)!
         cell.firstLaunch.text = formatter.string(from: date)
+        
         cell.country.text = rocket.country
         cell.price.text = "$\(Float(rocket.costPerLaunch) / 1000000.0) M"
+        
+        let tonStr = NSAttributedString(string: " ton", attributes: [.foregroundColor: Style.Colors.rocketInfoTextColor])
+        let secStr = NSAttributedString(string: " sec", attributes: [.foregroundColor: Style.Colors.rocketInfoTextColor])
+        
         cell.numberOfEngines.text = String(rocket.firstStage.engines)
-        cell.fuelAmount.text = String(rocket.firstStage.fuelAmountTons) + " ton"
+        cell.fuelAmount.configureAttributedStr(with: String(rocket.firstStage.fuelAmountTons), addition: tonStr)
         if let burnTime = rocket.firstStage.burnTimeSEC {
-            cell.burnTime.text = String(burnTime) + " sec"
+            cell.burnTime.configureAttributedStr(with: String(burnTime), addition: secStr)
         }
         cell.numberOfEngines2.text = String(rocket.secondStage.engines)
-        cell.fuelAmount2.text = String(rocket.secondStage.fuelAmountTons) + " ton"
+        cell.fuelAmount2.configureAttributedStr(with: String(rocket.secondStage.fuelAmountTons), addition: tonStr)
         if let burnTime2 = rocket.secondStage.burnTimeSEC {
-            cell.burnTime2.text = String(burnTime2) + " sec"
+            cell.burnTime2.configureAttributedStr(with: String(burnTime2), addition: secStr)
         }
         return cell
     }
