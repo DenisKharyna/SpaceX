@@ -22,7 +22,6 @@ class LaunchesViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        constrain()
     }
     
     //MARK: - Helpers
@@ -34,11 +33,9 @@ class LaunchesViewController: UITableViewController {
         tableView.backgroundColor = .black
         tableView.separatorColor = .clear
         tableView.bounces = false
-        tableView.isUserInteractionEnabled = false
+        tableView.isUserInteractionEnabled = true
+        tableView.allowsSelection = false
         tableView.tableHeaderView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.width, height: 40))
-    }
-    private func constrain() {
-        
     }
 }
 
@@ -47,7 +44,7 @@ extension LaunchesViewController {
         return 1
     }
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return allLaunches.count > 5 ? 5 : allLaunches.count
+        return allLaunches.count > 5 ? 10 : allLaunches.count
     }
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 116
