@@ -112,9 +112,14 @@ extension MainViewController: UICollectionViewDataSource {
         }
         cell.delegate = self
         cell.titleLabel.text = rocket.name
-        cell.firstLaunch.text = rocket.firstFlight
+        let prevFormatter = DateFormatter()
+        prevFormatter.dateFormat = "yyyy-MM-dd"
+        let formatter = DateFormatter()
+        formatter.dateFormat = "d MMMM, yyyy"
+        let date = prevFormatter.date(from: rocket.firstFlight)!
+        cell.firstLaunch.text = formatter.string(from: date)
         cell.country.text = rocket.country
-        cell.price.text = String(rocket.costPerLaunch)
+        cell.price.text = "$\(Float(rocket.costPerLaunch) / 1000000.0) M"
         cell.numberOfEngines.text = String(rocket.firstStage.engines)
         cell.fuelAmount.text = String(rocket.firstStage.fuelAmountTons) + " ton"
         if let burnTime = rocket.firstStage.burnTimeSEC {
