@@ -12,6 +12,7 @@
 		610163B929607EF5008C3606 /* LabGrotesque-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 610163B629607EF5008C3606 /* LabGrotesque-Regular.ttf */; };
 		61066F8129686F5700A3D7D7 /* LaunchesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61066F8029686F5700A3D7D7 /* LaunchesViewController.swift */; };
 		61066F8329687A1300A3D7D7 /* LaunchesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61066F8229687A1300A3D7D7 /* LaunchesTableViewCell.swift */; };
+		617E8CBE29A40358006AB5F8 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 617E8CBD29A40358006AB5F8 /* Constants.swift */; };
 		61B9D35F295258B000E6D62E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B9D35E295258B000E6D62E /* AppDelegate.swift */; };
 		61B9D361295258B000E6D62E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B9D360295258B000E6D62E /* SceneDelegate.swift */; };
 		61B9D363295258B000E6D62E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 61B9D362295258B000E6D62E /* MainViewController.swift */; };
@@ -35,6 +36,7 @@
 		610163B629607EF5008C3606 /* LabGrotesque-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = "LabGrotesque-Regular.ttf"; path = "../../../../../Downloads/LabGrotesque-Regular.ttf"; sourceTree = "<group>"; };
 		61066F8029686F5700A3D7D7 /* LaunchesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesViewController.swift; sourceTree = "<group>"; };
 		61066F8229687A1300A3D7D7 /* LaunchesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchesTableViewCell.swift; sourceTree = "<group>"; };
+		617E8CBD29A40358006AB5F8 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		61B9D35B295258B000E6D62E /* SpaceX.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpaceX.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		61B9D35E295258B000E6D62E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		61B9D360295258B000E6D62E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				61BD47CD295B42FC008A23D8 /* UILableExtension.swift */,
 				61BD47CF295B4640008A23D8 /* UIViewExtension.swift */,
 				61C298482970671700B839C0 /* PushControllersProtocol.swift */,
+				617E8CBD29A40358006AB5F8 /* Constants.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				61E1DECC2971C7D800B0354A /* Launch.swift in Sources */,
 				61066F8129686F5700A3D7D7 /* LaunchesViewController.swift in Sources */,
 				61C298492970671700B839C0 /* PushControllersProtocol.swift in Sources */,
+				617E8CBE29A40358006AB5F8 /* Constants.swift in Sources */,
 				61E88E6D2952865800F459B9 /* ApiManager.swift in Sources */,
 				61E1DECE2971E76C00B0354A /* SettingsViewController.swift in Sources */,
 				61E231C029534AF000B8DFE7 /* RocketCollectionViewCell.swift in Sources */,
