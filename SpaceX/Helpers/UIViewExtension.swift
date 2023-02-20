@@ -57,4 +57,36 @@ extension UIView {
         
         return view
     }
+    
+    func configureSettingsOptionView(title: String, segmentedControl: UISegmentedControl) {
+        translatesAutoresizingMaskIntoConstraints = false
+        
+        let label = UILabel()
+        label.text = title
+        label.font = Style.Fonts.labGrotesqueRegular?.withSize(16)
+        label.textColor = Style.Colors.mainTextColor
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        let segControl = segmentedControl
+        segControl.backgroundColor = Style.Colors.grayBackground
+        segControl.selectedSegmentTintColor = .white
+        let titleTextAttributes1 = [.foregroundColor: Style.Colors.rocketInfoTextColor, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 14)]
+        let titleTextAttributes2 = [.foregroundColor: Style.Colors.pageControlBackground, NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 14)]
+        segmentedControl.setTitleTextAttributes(titleTextAttributes1, for: .normal)
+        segmentedControl.setTitleTextAttributes(titleTextAttributes2, for: .selected)
+        segControl.translatesAutoresizingMaskIntoConstraints = false
+        
+        addSubview(label)
+        addSubview(segControl)
+        
+        NSLayoutConstraint.activate([
+            label.leadingAnchor.constraint(equalTo: self.leadingAnchor),
+            label.centerYAnchor.constraint(equalTo: self.centerYAnchor),
+            
+            segControl.widthAnchor.constraint(equalToConstant: 115),
+            segControl.heightAnchor.constraint(equalToConstant: 40),
+            segControl.trailingAnchor.constraint(equalTo: self.trailingAnchor),
+            segControl.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+        ])
+    }
 }
