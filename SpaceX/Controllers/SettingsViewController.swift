@@ -25,7 +25,7 @@ class SettingsViewController: UIViewController {
     
     //MARK: - Helpers
     private func configureUI() {
-        view.backgroundColor = .black
+        view.backgroundColor = Style.Colors.pageControlBackground
         self.navigationItem.title = "Settings"
         
         closeButton.setTitle("Close", for: .normal)
