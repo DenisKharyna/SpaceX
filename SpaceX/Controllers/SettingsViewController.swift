@@ -13,6 +13,12 @@ class SettingsViewController: UIViewController {
     
     private let firstSection = UIView()
     private let heightSegControl = UISegmentedControl(items: ["m", "ft"])
+    private let secondSection = UIView()
+    private let diameterSegControl = UISegmentedControl(items: ["m", "ft"])
+    private let thirdSection = UIView()
+    private let massSegControl = UISegmentedControl(items: ["kg", "lb"])
+    private let fourthSection = UIView()
+    private let payloadSegControl = UISegmentedControl(items: ["kg", "lb"])
     
     //MARK: - Life Cycle
     override func viewDidLoad() {
@@ -37,13 +43,19 @@ class SettingsViewController: UIViewController {
         closeButton.addTarget(self, action: #selector(closeButtonTapped), for: .touchUpInside)
         
         firstSection.configureSettingsOptionView(title: "Height", segmentedControl: heightSegControl)
+        secondSection.configureSettingsOptionView(title: "Diameter", segmentedControl: diameterSegControl)
+        thirdSection.configureSettingsOptionView(title: "Mass", segmentedControl: massSegControl)
+        fourthSection.configureSettingsOptionView(title: "Payload", segmentedControl: payloadSegControl)
     }
     private func constrain() {
         navigationController?.navigationBar.addSubview(closeButton)
-        view.addSubview(firstSection)
+        let stack = UIStackView(arrangedSubviews: [firstSection, secondSection, thirdSection, fourthSection])
+        stack.axis = .vertical
+        stack.spacing = 24
+        view.addSubview(stack)
         
         closeButton.translatesAutoresizingMaskIntoConstraints = false
-        firstSection.translatesAutoresizingMaskIntoConstraints = false
+        stack.translatesAutoresizingMaskIntoConstraints = false
         
         NSLayoutConstraint.activate([
             closeButton.topAnchor.constraint(equalTo: navigationController!.navigationBar.topAnchor),
@@ -51,10 +63,10 @@ class SettingsViewController: UIViewController {
             closeButton.widthAnchor.constraint(equalToConstant: 120),
             closeButton.heightAnchor.constraint(equalToConstant: 60),
             
-            firstSection.widthAnchor.constraint(equalToConstant: view.frame.width - 56),
-            firstSection.heightAnchor.constraint(equalToConstant: 40),
-            firstSection.centerXAnchor.constraint(equalTo: view.centerXAnchor),
-            firstSection.topAnchor.constraint(equalTo: view.topAnchor, constant: 106)
+            stack.widthAnchor.constraint(equalToConstant: view.frame.width - 56),
+            stack.heightAnchor.constraint(equalToConstant: 232),
+            stack.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            stack.topAnchor.constraint(equalTo: view.topAnchor, constant: 106)
         ])
     }
 }

@@ -80,6 +80,8 @@ extension UIView {
         addSubview(segControl)
         
         NSLayoutConstraint.activate([
+            self.heightAnchor.constraint(equalToConstant: 40),
+            
             label.leadingAnchor.constraint(equalTo: self.leadingAnchor),
             label.centerYAnchor.constraint(equalTo: self.centerYAnchor),
             
