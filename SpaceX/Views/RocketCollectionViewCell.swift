@@ -12,6 +12,7 @@ class RocketCollectionViewCell: UICollectionViewCell {
     var rocket: Rocket?
     private let reuseId = "CellID"
     weak var delegate: PushControllersDelegate?
+    let defaults = UserDefaults.standard
 
     //MARK: - Main Properties
     private let scrollView = UIScrollView()
@@ -46,20 +47,23 @@ class RocketCollectionViewCell: UICollectionViewCell {
         super.init(frame: frame)
         configureUI()
         constrain()
+        NotificationCenter.default.addObserver(self, selector: #selector(reloadCV(notification:)), name: NSNotification.Name(rawValue: "reloadCV"), object: nil)
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-        //self.delegate?.presentSettingsController()
     }
     
     //MARK: - Selectors
     @objc private func settingsTapped() {
         self.delegate?.presentSettingsController()
     }
-    
     @objc private func showLaunchesButtonTapped() {
         self.delegate?.pushLaunchesController(title: rocket!.name, id: rocket!.id)
+    }
+    
+    //MARK: - NotificationCenter
+    @objc func reloadCV(notification: NSNotification) {
+      self.collectionView.reloadData()
     }
 
     //MARK: - Helpers
@@ -211,20 +215,23 @@ extension RocketCollectionViewCell: UICollectionViewDataSource {
         guard let rocket = rocket else { return cell }
         switch indexPath.row {
         case 0:
-            cell.numberLabel.text = String(rocket.height.feet!)
-            cell.text.text = "Height, ft"
+            let measure = defaults.string(forKey: K.heightUserDefaultsKey)
+            cell.numberLabel.text = measure == "m" ? String(rocket.height.meters!) : String(rocket.height.feet!)
+            cell.text.text = "Height, " + (measure ?? "ft")
         case 1:
-            cell.numberLabel.text = String(rocket.diameter.feet!)
-            cell.text.text = "Diameter, ft"
+            let measure = defaults.string(forKey: K.diameterUserDefaultsKey)
+            cell.numberLabel.text = measure == "m" ? String(rocket.diameter.meters!) : String(rocket.diameter.feet!)
+            cell.text.text = "Diameter, " + (measure ?? "ft")
         case 2:
-            cell.numberLabel.text = String(rocket.mass.lb)
-            cell.text.text = "Mass, lb"
+            let measure = defaults.string(forKey: K.massUserDefaultsKey)
+            cell.numberLabel.text = measure == "kg" ? String(rocket.mass.kg) : String(rocket.mass.lb)
+            cell.text.text = "Mass, " + (measure ?? "lb")
         case 3:
-            cell.numberLabel.text = String(rocket.payloadWeights[0].lb)
-            cell.text.text = "Payload, lb"
+            let measure = defaults.string(forKey: K.payloadUserDefaultsKey)
+            cell.numberLabel.text = measure == "kg" ? String(rocket.payloadWeights[0].kg) :  String(rocket.payloadWeights[0].lb)
+            cell.text.text = "Payload, " + (measure ?? "lb")
         default:
-            cell.numberLabel.text = "Text"
-            cell.text.text = "text"
+            break
         }
         return cell
     }

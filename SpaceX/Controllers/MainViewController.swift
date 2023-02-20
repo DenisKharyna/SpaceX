@@ -152,10 +152,7 @@ extension MainViewController: PushControllersDelegate {
         }
         navigationController?.pushViewController(vc, animated: true)
     }
-    
     func presentSettingsController() {
         self.present(UINavigationController(rootViewController: SettingsViewController()), animated: true)
     }
-    
-    
 }

@@ -41,6 +41,7 @@ class SettingsViewController: UIViewController {
     //MARK: - Selector
     @objc private func closeButtonTapped() {
         self.dismiss(animated: true)
+        NotificationCenter.default.post(name: NSNotification.Name("reloadCV"), object: nil)
     }
     @objc private func heightControlChanged(_ segmentedControl: UISegmentedControl) {
         if segmentedControl.selectedSegmentIndex == 0 {
