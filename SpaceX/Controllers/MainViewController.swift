@@ -50,7 +50,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate {
     //MARK: - Helping
     private func configureUI() {
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
-        layout.itemSize = CGSize(width: view.frame.width, height: view.frame.height-72)
+        layout.itemSize = CGSize(width: view.frame.width, height: view.frame.height-70)
         layout.scrollDirection = .horizontal
         layout.sectionInset = .zero
         layout.minimumLineSpacing = 0
@@ -64,7 +64,7 @@ class MainViewController: UIViewController, UICollectionViewDelegate {
         collectionView.isPagingEnabled = true
         
         pageControl.backgroundColor = Style.Colors.pageControlBackground
-        pageControl.pageIndicatorTintColor = UIColor(red: 142/255, green: 142/255, blue: 143/255, alpha: 1)
+        pageControl.pageIndicatorTintColor = Style.Colors.rocketInfoTextColor
         pageControl.currentPageIndicatorTintColor = .white
         pageControl.isUserInteractionEnabled = false
     }
